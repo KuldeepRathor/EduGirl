@@ -1,6 +1,5 @@
-import 'package:edugirl/screens/home_page.dart';
-import 'package:edugirl/screens/homepage.dart';
-import 'package:edugirl/screens/welcome_page.dart';
+import 'package:edugirl/google_sign_in/sign_in_screen.dart';
+import 'package:edugirl/utilities/bottomnav.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,10 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'EduGirl',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),
+      home: SignInScreen(),
     );
   }
 }

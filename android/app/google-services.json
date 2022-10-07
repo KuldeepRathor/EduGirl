@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1090667736236",
+    "project_id": "edugirl-d5215",
+    "storage_bucket": "edugirl-d5215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090667736236:android:cc7cee0cf3ddbde7a48309",
+        "android_client_info": {
+          "package_name": "com.example.edugirl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090667736236-3c6ce7mgmhp4it3sqma8lj2i2bbommjq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.edugirl",
+            "certificate_hash": "0801cd7bc39dd0887100b011b4b010c15bdfbd6c"
+          }
+        },
+        {
+          "client_id": "1090667736236-ifdtm2dfksare6obs24k430lmp6oiflp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5VZe3hDsEbY8Ibhbm42ANQ8PQoXuethA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090667736236-ifdtm2dfksare6obs24k430lmp6oiflp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
