@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../utilities/bottomnav.dart';
 import 'authentication.dart';
 
 
@@ -35,28 +36,35 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   ),
                 ),
               ),
-              onPressed: () async {
-                setState(() {
-                  _isSigningIn = true;
-                });
-
-                User? user =
-                    await Authentication.signInWithGoogle(context: context);
-
-                setState(() {
-                  _isSigningIn = false;
-                });
-
-                if (user != null) {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => UserInfoScreen(
-                        user: user,
-                      ),
-                    ),
-                  );
-                }
+              onPressed: (){
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => BottomBar(),
+                  ),
+                );
               },
+              // onPressed: () async {
+              //   setState(() {
+              //     _isSigningIn = true;
+              //   });
+              //
+              //   User? user =
+              //       await Authentication.signInWithGoogle(context: context);
+              //
+              //   setState(() {
+              //     _isSigningIn = false;
+              //   });
+              //
+              //   if (user != null) {
+              //     Navigator.of(context).pushReplacement(
+              //       MaterialPageRoute(
+              //         builder: (context) => UserInfoScreen(
+              //           user: user,
+              //         ),
+              //       ),
+              //     );
+              //   }
+              // },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Row(

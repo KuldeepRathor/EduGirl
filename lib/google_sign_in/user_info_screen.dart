@@ -158,7 +158,15 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
+<<<<<<< Updated upstream
                         builder: (context) => BtNavigationBar(),
+=======
+<<<<<<< HEAD
+                        builder: (context) => Homepage(),
+=======
+                        builder: (context) => BtNavigationBar(),
+>>>>>>> 0a56709d5c2e3709a2843bf98967fa6ac2608c95
+>>>>>>> Stashed changes
                       ));
                 },
                 child: Text('Home'),
