@@ -1,10 +1,11 @@
-import 'dart:ui';
+// ignore_for_file: prefer_const_constructors
 
-import 'package:edugirl/screens/home_page.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import '../utilities/bottomnav.dart';
 import 'authentication.dart';
 import 'sign_in_screen.dart';
 
@@ -157,7 +158,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => BtNavigationBar(),
                       ));
                 },
                 child: Text('Home'),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'dart:ui';
 
 import 'package:edugirl/google_sign_in/user_info_screen.dart';
@@ -22,8 +24,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
       padding: const EdgeInsets.only(bottom: 16.0),
       child: _isSigningIn
           ? CircularProgressIndicator(
-
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xff6a1b9a)),
             )
           : OutlinedButton(
               style: ButtonStyle(
@@ -73,7 +74,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -33,9 +35,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   children: [
                     SizedBox(height: 20),
                     Text(
-                      'LoanKr',
+                      'EduGirl',
                       style: TextStyle(
                         fontSize: 40,
+                        color: Color(0xff6a1b9a),
                       ),
                     ),
                   ],

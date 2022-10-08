@@ -1,94 +1,70 @@
+
+
+
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 import '../notice/notice_board.dart';
 import '../resource/resources.dart';
 import '../screens/home_page.dart';
 import '../screens/profile_page.dart';
-
-
-
-class BottomBar extends StatefulWidget {
-  const BottomBar({Key? key}) : super(key: key);
+class BtNavigationBar extends StatefulWidget {
+  const BtNavigationBar({Key? key}) : super(key: key);
 
   @override
-  _BottomBarState createState() => new _BottomBarState();
+  State<BtNavigationBar> createState() => _BtNavigationBarState();
 }
 
-class _BottomBarState extends State<BottomBar> {
-  int _pageIndex = 0;
-  late PageController _pageController;
-
-  List<Widget> tabPages = [
+class _BtNavigationBarState extends State<BtNavigationBar> {
+  int _selectedIndex = 0;
+  static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Noticeboard(),
     Resources(),
-    profilepage(),
-    //Screen3(),
-    //Screen4(),
+    Resources(),
+
   ];
 
   @override
-  void initState(){
-    super.initState();
-    _pageController = PageController(initialPage: _pageIndex);
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          // backgroundColor: const Color(0xff080C15),
+          selectedItemColor: Colors.blue,
+          showSelectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          showUnselectedLabels: false,
+          iconSize: 32,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home,color: Colors.black45,),
+              label: 'Home',
+              activeIcon: Icon(Icons.home,color: Colors.purple,)
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.note_alt_rounded,color: Colors.black45,),
+                label: 'Resource',
+                activeIcon: Icon(Icons.note_alt_rounded,color: Colors.purple,)
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.photo_camera_front_outlined,color: Colors.black45,),
+                label: 'Profile',
+                activeIcon: Icon(Icons.photo_camera_front_outlined,color: Colors.purple,)
+            ),
 
-      bottomNavigationBar:BottomNavigationBar(
-        currentIndex: _pageIndex,
-        onTap: onTabTapped,
-
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home,
-                color: Colors.black,size:50),
-            label: '',
-            backgroundColor: Colors.white,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment,
-              color: Colors.black,size:50,),
-            label: '',
-            //backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school,
-              color: Colors.black,size: 50,),
-            label: '',
-            //backgroundColor: Colors.purple,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle,
-              color: Colors.black,size: 50,),
-            label: '',
-            //backgroundColor: Colors.pink,
-          ),
-        ],
-      ),
-
-      body: PageView(
-        children: tabPages,
-        onPageChanged: onPageChanged,
-        controller: _pageController,
+          ],
+          currentIndex: _selectedIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+        ),
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
       ),
     );
-  }
-  void onPageChanged(int page) {
-    setState(() {
-      this._pageIndex = page;
-    });
-  }
-
-  void onTabTapped(int index) {
-    this._pageController.animateToPage(index,duration: const Duration(milliseconds: 700),curve: Curves.easeInOut);
   }
 }

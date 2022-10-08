@@ -116,7 +116,7 @@ class _MyLoginState extends State<MyLogin> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>  BottomBar()),
+                                  builder: (context) =>  BtNavigationBar()),
                             );
 
                           } on FirebaseAuthException catch (e) {
